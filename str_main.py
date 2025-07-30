@@ -9,25 +9,11 @@ import pandas as pd
 st.title("Stock Price Movement Simulator - Everything is :blue[Random]")  
 
 
-tabGBM, tabMC = st.tabs(["Geometric Brownian Motion Simulator", "Monte Carlo Simulator"])
+tabGBM, tabMC, tabDisc = st.tabs(["Geometric Brownian Motion Simulator", "Monte Carlo Simulator", "Note"])
 with tabGBM:
     st.header(":green[Explanation]")
     st.write("""
-🌸 **Fun Fact:** Geometric Brownian Motion (GBM) was initially observed by looking at **pollen particles**! Now I'm using it for stocks. 
-
-📈 That's because sometimes you need to reject the belief that trading is fair (weak form efficient market hypothesis) and use **random walk** instead - price movements are entirely independent from past information.
-
-🎲 This assumes:
-- Price **returns** are normally distributed 📊
-- Price **outcomes** are lognormally distributed 📈
-
-🚀 Meaning if I trade long enough I can *never lose wink wink* (prices can't go below 0 but can increase significantly)
-
-🧮 Using this model creates a fancy trendline:
-- **Drift component** (trendline) ↗️
-- **Random fluctuations** (fancy shocks)
-
-⚡ And yet, the GBM is foundational in financial modeling due to its analytical tractability and compatibility with models like **Black-Scholes** for option pricing (my next project). 🎯
+Geometric Brownian Motion (GBM) is a stochastic process - initially observed in pollen particles - that is widely used in finance to model the random movement of stocks. This adopts the weak form efficient market hypothesis (EMH) and assumes stock prices follow a random walk with a drift and volatility component, meaning that price changes are influenced by both a predictable trend and random fluctuations. The prices are, however, independent of previous information and only rely on the current state of the stock price (Markov process). Put simply, a child starts from a particular point, hobbling either a left or right depending on their balance. 
 """)
     st.divider()
 
@@ -150,11 +136,7 @@ with tabGBM:
 with tabMC:
     st.header(":green[Explanation]")
     st.write("""
-🎰 **Monte Carlo Magic:** The Monte Carlo Simulation basically runs the GBM **many, many times** (because why simulate once when you can simulate 10,000 times?), allowing for a statistical interpretation of randomness with some extra steps.
-
-🎲 It's essentially what happens when **nihilistic math gamblers** (aka quants) decide that one possible future isn't depressing enough - so they generate **thousands** of potential financial disasters (or retirements) 
-
-📊 Translation: Instead of one possible future, you get a whole universe of possibilities where your portfolio can either moon 🚀 or become worthless 💀. **Cool!** ✨
+The Monte Carlo simulation uses GBM to model and simulate potential future price movements of stocks. By simulating numerous price paths based on GBM, one can estimate the probability distribution of future asset prices and assess potential risks and returns.
 """)
     st. divider()
 
@@ -418,6 +400,12 @@ with tabMC:
 
     else:
         st.error("Please fill in all tickers")
+
+with tabDisc:
+    st.header("Note and :red[Disclaimer]")
+    st.write("My name is Lev, I am a business/finance major who is passionate about data, tech, and quantitative methods in finance. I hope this tool helps you learn as much as I did making it! All the code is available in the public GitHub repo that should be linked to the page (click the little cat).") 
+    st.write("Keep in mind that this tool should not be used for investment decisions and is intended for educational purposes only.") 
+    st.write("Feel free to reach out to me on LinkedIn with any questions or suggestions!")
 
     
         

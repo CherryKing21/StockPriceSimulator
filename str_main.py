@@ -6,7 +6,8 @@ import plotly.graph_objects as go
 import pandas as pd
 
 
-st.title("Stock Price Movement Simulator - Everything is :blue[Random]")  
+st.title("Everything is :blue[Random]")  
+st.header("Stock Price Movement Simulator")
 
 
 tabGBM, tabMC, tabDisc = st.tabs(["Geometric Brownian Motion Simulator", "Monte Carlo Simulator", "Note"])

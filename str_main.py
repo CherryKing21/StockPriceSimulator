@@ -404,7 +404,7 @@ The Monte Carlo simulation uses GBM to model and simulate potential future price
 
 with tabDisc:
     st.header("Note and :red[Disclaimer]")
-    st.write("My name is Lev, I am a business/finance major who is passionate about data, tech, and quantitative methods in finance. I hope this tool helps you learn as much as I did making it! All the code is available in the public GitHub repo that should be linked to the page (click the little cat).") 
+    st.write("My name is Lev, I am a business/finance major, who is passionate about data, tech, and quantitative methods in finance. I hope this tool helps you learn as much as I did making it! All the code is available in the public GitHub repo that should be linked to the page (click the little cat).") 
     st.write("Keep in mind that this tool should not be used for investment decisions and is intended for educational purposes only.") 
     st.write("Feel free to reach out to me on LinkedIn with any questions or suggestions!")
 

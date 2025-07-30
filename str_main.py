@@ -440,7 +440,7 @@ Stylistic formatting and debugging were assisted by Claude Sonnet 4.
     
     col1, col2 = st.columns([3,4])
     with col1:
-        st.image("C:/Users/Lev/Desktop/CODING/simulator/IMG_0781.jpg", width = 300)
+        st.image("IMG_0781.jpg", width = 300)
     with col2:
         st.subheader("Lev Akhmerov, 21")
         #st.link_button("LinkedIn", "https://www.linkedin.com/in/lev-akhmerov/")
@@ -451,7 +451,7 @@ Stylistic formatting and debugging were assisted by Claude Sonnet 4.
         col1, col2, col3 = st.columns([1, 1, 5])
 
         with col1:
-            with open(r"C:\Users\Lev\Desktop\CODING\simulator\InBug-White.png", "rb") as file:
+            with open(r"InBug-White.png", "rb") as file:
                 contents = file.read()
                 data_url = base64.b64encode(contents).decode("utf-8")
             
@@ -462,7 +462,7 @@ Stylistic formatting and debugging were assisted by Claude Sonnet 4.
             """, unsafe_allow_html=True)
 
         with col2:
-            with open(r"C:\Users\Lev\Desktop\CODING\simulator\e-mail-mail-letter-white-logo-icon-transparent-background-701751694973962w7ooykuds3.png", "rb") as file:
+            with open(r"e-mail-mail-letter-white-logo-icon-transparent-background-701751694973962w7ooykuds3.png", "rb") as file:
                 contents = file.read()
                 data_url = base64.b64encode(contents).decode("utf-8")
             

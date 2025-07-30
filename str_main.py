@@ -451,13 +451,18 @@ Stylistic formatting and debugging were assisted by Claude Sonnet 4.
         col1, col2, col3 = st.columns([1, 1, 5])
 
         with col1:
-            with open(r"InBug-White.png", "rb") as file:
-                contents = file.read()
-                data_url = base64.b64encode(contents).decode("utf-8")
-            
+            with open("InBug-White.png", "rb") as file:
+                white_logo = base64.b64encode(file.read()).decode("utf-8")
+
+            with open("InBug-Black.png", "rb") as file:
+                black_logo = base64.b64encode(file.read()).decode("utf-8")
+
             st.markdown(f"""
             <a href="https://www.linkedin.com/in/lev-akhmerov/" target="_blank">
-                <img src="data:image/png;base64,{data_url}" width="40" height="40" style="cursor: pointer;">
+            <picture>
+                <source srcset="data:image/png;base64,{white_logo}" media="(prefers-color-scheme: dark)">
+                <img src="data:image/png;base64,{black_logo}" width="40" height="40" style="cursor: pointer;">
+            </picture>
             </a>
             """, unsafe_allow_html=True)
 

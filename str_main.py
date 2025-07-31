@@ -15,7 +15,7 @@ tabGBM, tabMC, tabDisc = st.tabs(["Geometric Brownian Motion Simulator", "Monte 
 with tabGBM:
     st.header(":green[Explanation]")
     st.write("""
-Geometric Brownian Motion (:blue[GBM]) is a stochastic process. Brownian motion, initially observed in pollen particles, forms the basis for :blue[GBM], which is widely used in finance to model the random movement of stocks. This adopts the :green[weak form of the efficient market hypothesis (EMH)] and assumes stock prices follow a random walk with both a :purple[drift] and a :orange[volatility] component—meaning price changes are influenced by a predictable trend and random fluctuations. However, prices are independent of past information and rely only on the current state of the stock price (a :red[Markov process]).
+Geometric Brownian Motion (:blue[GBM]) is a stochastic process. Brownian motion, initially observed in pollen particles, forms the basis for :blue[GBM], which is widely used in finance to model the random movement of stocks. This adopts the :green[weak form of the efficient market hypothesis (EMH)] and assumes stock prices follow a random walk with both a :violet[drift] and a :orange[volatility] component—meaning price changes are influenced by a predictable trend and random fluctuations. However, prices are independent of past information and rely only on the current state of the stock price (a :red[Markov process]).
 
 Put simply, imagine a toddler starting from a particular point, hobbling either to the left or right depending on their balance.
 """)
@@ -452,17 +452,12 @@ Stylistic formatting and debugging were assisted by Claude Sonnet 4.
 
         with col1:
             with open("InBug-White.png", "rb") as file:
-                white_logo = base64.b64encode(file.read()).decode("utf-8")
-
-            with open("InBug-Black.png", "rb") as file:
-                black_logo = base64.b64encode(file.read()).decode("utf-8")
+                contents = file.read()
+                data_url = base64.b64encode(contents).decode("utf-8")
 
             st.markdown(f"""
             <a href="https://www.linkedin.com/in/lev-akhmerov/" target="_blank">
-            <picture>
-                <source srcset="data:image/png;base64,{white_logo}" media="(prefers-color-scheme: dark)">
-                <img src="data:image/png;base64,{black_logo}" width="40" height="40" style="cursor: pointer;">
-            </picture>
+                <img src="data:image/png;base64,{data_url}" width="40" height="40" style="cursor: pointer;">
             </a>
             """, unsafe_allow_html=True)
 
